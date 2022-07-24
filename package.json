@@ -21,7 +21,9 @@
 		"type": "git",
 		"url": "https://github.com/germanfrelo/template.git"
 	},
-	"scripts": {},
+	"scripts": {
+		"lint:css": "npx stylelint \"**/*.css\" --formatter verbose"
+	},
 	"dependencies": {},
 	"devDependencies": {
 		"eslint": "8.20.0",
