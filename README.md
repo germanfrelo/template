@@ -1,0 +1,2 @@
+# template
+My repository template.
