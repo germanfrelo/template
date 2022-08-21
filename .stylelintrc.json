@@ -3,5 +3,14 @@
 		"stylelint-config-standard",
 		"stylelint-config-recess-order",
 		"stylelint-config-prettier"
-	]
+	],
+	"rules": {
+		"custom-media-pattern": null,
+		"custom-property-pattern": null,
+		"indentation": null,
+		"keyframes-name-pattern": null,
+		"max-line-length": null,
+		"selector-class-pattern": null,
+		"selector-id-pattern": null
+	}
 }
