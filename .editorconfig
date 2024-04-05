@@ -1,11 +1,9 @@
-# Local .editorconfig file
+# https://editorconfig.org
 
-# This file should only include settings that affect the physical contents of the file, not just how it appears in an editor.
-# Do not include personal preference presentation settings like a tab's `indent_size` in this file; those should be specified in a parent .editorconfig file outside of the repository.
+# Top-most EditorConfig file
+root = true
 
-# Ensure that personal preference presentation settings can be inherited from parent .editorconfig files.
-root = false
-
+# All files
 [*]
 charset = utf-8
 end_of_line = lf
@@ -13,6 +11,17 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
 
+# Markdown files
 [*.md]
+# Keep trailing whitespace in order to create hard line breaks (see https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks)
+trim_trailing_whitespace = false
+# 4-spaces indentation (see https://github.com/DavidAnson/vscode-markdownlint/issues/86#issuecomment-579860824)
 indent_style = space
 indent_size = 4
+
+# YAML files
+[*.{yml,yaml}]
+# YAML doesn't support hard tabs (see https://yaml.org/spec/1.2.2/#61-indentation-spaces)
+indent_style = space
+# The YAML spec doesn't mandate a specific number of spaces for indentation; however, two spaces per indentation level is the most widely recommended and used approach (see https://localheinz.com/articles/2023/02/06/indenting-yaml-files/#content-use-two-spaces-of-indentation)
+indent_size = 2
