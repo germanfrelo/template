@@ -22,6 +22,8 @@
 		"url": "https://github.com/germanfrelo/template.git"
 	},
 	"scripts": {
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
 		"lint:css": "npx stylelint \"**/*.css\" --formatter verbose"
 	},
 	"dependencies": {},
