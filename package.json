@@ -22,7 +22,8 @@
 		"url": "https://github.com/germanfrelo/template.git"
 	},
 	"scripts": {
-		"lint:css": "npx stylelint \"**/*.css\" --formatter verbose"
+		"lint:css": "stylelint --max-warnings 0 \"**/*.css\"",
+		"lint:css:fix": "npm run lint:css -- --fix"
 	},
 	"dependencies": {},
 	"devDependencies": {
