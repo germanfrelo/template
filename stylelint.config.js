@@ -13,6 +13,7 @@ export default {
 		"declaration-property-value-no-unknown": true,
 		"media-feature-name-value-no-unknown": true,
 		"no-unknown-animations": true,
+		"no-unknown-custom-media": true,
 		"no-unknown-custom-properties": true,
 		// Enforce conventions: Patterns
 		"custom-media-pattern": null,
