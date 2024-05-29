@@ -4,12 +4,10 @@ import globals from "globals";
 export default [
 	{
 		languageOptions: {
-			globals: {
-				// Enable all predefined browser global variables
-				...globals.browser,
-			},
+			// Enable all predefined browser global variables
+			globals: globals.browser,
 		},
 	},
-	// ESLint's predefined configuration that enables its recommended rules
+	// ESLint's predefined config that enables its recommended rules
 	js.configs.recommended,
 ];
