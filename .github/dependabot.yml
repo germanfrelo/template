@@ -9,8 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      groups:
-        eslint:
-          patterns:
-            - "eslint"
-            - "@eslint/js"
+    groups:
+      eslint:
+        patterns:
+          - "eslint"
+          - "@eslint/js"
