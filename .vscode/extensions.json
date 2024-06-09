@@ -4,6 +4,7 @@
 		"dbaeumer.vscode-eslint",
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"usernamehw.errorlens"
 	]
 }
