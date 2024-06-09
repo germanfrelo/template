@@ -1,2 +1,4 @@
-# Ignore installed npm modules
+# It's recommended to use gitignore.io to create project-specific .gitignore files.
+
+# Dependencies directory
 node_modules/
