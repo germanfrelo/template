@@ -1,6 +1,10 @@
 {
 	// Formatting
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"editor.renderWhitespace": "boundary"
+	},
 	"editor.formatOnSave": true,
 	// Lint CSS with Stylelint
 	"stylelint.enable": true, // default
@@ -12,6 +16,7 @@
 		// As object, "source.fixAll" actions are prioritized and executed first.
 		// Ref: https://github.com/microsoft/vscode/blob/1.90.0/src/vs/workbench/contrib/codeEditor/browser/saveParticipants.ts#L300-L332.
 		"source.fixAll.eslint": "explicit",
+		"source.fixAll.markdownlint": "explicit",
 		"source.fixAll.stylelint": "explicit",
 		"source.addMissingImports": "explicit",
 		"source.sortImports": "explicit"
