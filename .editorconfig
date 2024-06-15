@@ -20,12 +20,15 @@ indent_style = tab
 
 # Markdown files
 [*.md]
-# Ref: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md007---unordered-list-indentation
+# Ref: https://github.com/DavidAnson/markdownlint/blob/main/doc/md010.md
 indent_style = space
+# Ref: https://github.com/DavidAnson/markdownlint/blob/main/doc/md007.md
 indent_size = 2
 # Refs:
-# https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks
+# https://cirosantilli.com/markdown-style-guide/#line-breaks
 # https://www.markdownguide.org/basic-syntax/#line-breaks
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/md009.md
+# https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks
 trim_trailing_whitespace = false
 
 # YAML files
