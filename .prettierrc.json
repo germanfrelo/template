@@ -1,4 +1,5 @@
 {
+	"quoteProps": "consistent",
 	"overrides": [
 		{
 			"files": ["*.html", "*.css"],
@@ -8,7 +9,15 @@
 		},
 		{
 			"files": ["*.js", "*.jsx", "*.vue"],
-			"options": { "singleAttributePerLine": true }
+			"options": {
+				"singleAttributePerLine": true
+			}
+		},
+		{
+			"files": ["*.jsonc"],
+			"options": {
+				"trailingComma": "none"
+			}
 		}
 	]
 }
