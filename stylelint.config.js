@@ -5,6 +5,7 @@ export default {
 		"stylelint-config-standard",
 		"stylelint-config-recess-order",
 	],
+	plugins: ["stylelint-plugin-defensive-css"],
 	reportDescriptionlessDisables: true,
 	reportInvalidScopeDisables: true,
 	reportNeedlessDisables: true,
@@ -93,5 +94,20 @@ export default {
 		// "keyframes-name-pattern": null,
 		// "selector-class-pattern": null,
 		// "selector-id-pattern": null,
+
+		// plugin/use-defensive-css
+		"plugin/use-defensive-css": [
+			true,
+			{
+				"severity": "warning",
+				"accidental-hover": true,
+				"background-repeat": true,
+				"custom-property-fallbacks": true,
+				"flex-wrapping": true,
+				"scroll-chaining": true,
+				"scrollbar-gutter": true,
+				"vendor-prefix-grouping": true,
+			},
+		],
 	},
 };
