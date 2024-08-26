@@ -62,6 +62,7 @@
 		"prettier": "3.3.3",
 		"stylelint": "16.8.2",
 		"stylelint-config-recess-order": "5.1.0",
-		"stylelint-config-standard": "36.0.1"
+		"stylelint-config-standard": "36.0.1",
+		"stylelint-plugin-defensive-css": "1.0.4"
 	}
 }
