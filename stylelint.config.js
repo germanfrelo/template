@@ -122,9 +122,9 @@ export default {
 			{
 				"severity": "warning",
 				"accidental-hover": false, // Unncecessary
-				"background-repeat": false, // Solved in assets/css/base.css
-				"custom-property-fallbacks": false, // TODO: Test it
-				"flex-wrapping": false, // Unncecessary
+				"background-repeat": false, // Solved in linked base.css stylesheet
+				"custom-property-fallbacks": true,
+				"flex-wrapping": true,
 				"scroll-chaining": true,
 				"scrollbar-gutter": false, // TODO: Check browser support (~78% in Oct. 2024)
 				"vendor-prefix-grouping": true,
