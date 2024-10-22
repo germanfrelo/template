@@ -61,38 +61,32 @@ export default {
 				severity: "warning",
 			},
 		],
-		"selector-max-combinators": [
-			2,
-			{
-				severity: "warning",
-			},
-		],
 		"selector-max-compound-selectors": [
-			4,
+			3,
 			{
 				severity: "warning",
 			},
 		],
 		"selector-max-id": [
-			1,
+			2,
 			{
 				severity: "warning",
 			},
 		],
 		"selector-max-pseudo-class": [
-			2,
+			3,
 			{
 				severity: "warning",
 			},
 		],
 		"selector-max-specificity": [
-			"1,3,2",
+			"2,3,3",
 			{
 				severity: "warning",
 			},
 		],
 		"selector-max-type": [
-			2,
+			3,
 			{
 				severity: "warning",
 			},
@@ -127,12 +121,12 @@ export default {
 			true,
 			{
 				"severity": "warning",
-				"accidental-hover": true,
-				"background-repeat": true,
-				"custom-property-fallbacks": true,
-				"flex-wrapping": true,
+				"accidental-hover": false, // Unncecessary
+				"background-repeat": false, // Solved in assets/css/base.css
+				"custom-property-fallbacks": false, // TODO: Test it
+				"flex-wrapping": false, // Unncecessary
 				"scroll-chaining": true,
-				"scrollbar-gutter": true,
+				"scrollbar-gutter": false, // TODO: Check browser support (~78% in Oct. 2024)
 				"vendor-prefix-grouping": true,
 			},
 		],
