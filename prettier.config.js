@@ -5,10 +5,12 @@
  * @type {import("prettier").Config}
  */
 const config = {
+	// When using Astro, uncomment this to use the plugin. Ref: https://docs.astro.build/en/editor-setup/#prettier
+	// plugins: ["prettier-plugin-astro"],
 	quoteProps: "consistent",
 	overrides: [
 		{
-			files: ["*.html", "*.css"],
+			files: ["*.html", "*.css", "*.astro"],
 			options: {
 				printWidth: 9999,
 			},
@@ -23,6 +25,12 @@ const config = {
 			files: ["*.jsonc"],
 			options: {
 				trailingComma: "none",
+			},
+		},
+		{
+			files: "*.astro",
+			options: {
+				parser: "astro",
 			},
 		},
 	],
