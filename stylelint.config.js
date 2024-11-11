@@ -3,6 +3,7 @@ export default {
 	extends: [
 		// Order matters: later configs take precedence over (override) earlier ones.
 		"stylelint-config-standard",
+		"stylelint-config-html",
 		"stylelint-config-recess-order",
 	],
 	plugins: ["stylelint-plugin-defensive-css"],
