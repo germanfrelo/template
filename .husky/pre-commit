@@ -1,6 +1,15 @@
 #!/bin/sh
 
-# Runs lint-staged on staged files before commit.
+# Prevents commits on main or in detached HEAD state.
+branch="$(git branch --show-current)"
+if [ -z "$branch" ]; then # Check for empty branch name (detached HEAD)
+	echo "🚫 You are in a detached HEAD state. Please checkout a branch before committing."
+	exit 1
+elif [ "$branch" = "main" ]; then # Check for direct commit to main
+	echo "🚫 Direct commits to main branch are not allowed. Please create a feature branch."
+	exit 1
+fi
 
-echo "Running pre-commit checks on staged files with lint-staged..."
+# Runs lint-staged on staged files before commit.
+echo "Running lint-staged on staged files..."
 lint-staged
