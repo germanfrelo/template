@@ -14,7 +14,7 @@ fi
 
 # Check for changes in dependency files
 if git diff-tree -r --name-only HEAD@{1} HEAD 2>/dev/null | grep -Eq '(package\.json|package-lock\.json)'; then
-	echo "❗ Project dependencies have changed. Run 'npm ci' (recommended) or 'npm install' to update."
+	echo "📦❗ Project dependencies have changed. Run 'npm ci' (recommended) or 'npm install' to update."
 else
-	echo "✅ No dependency changes detected."
+	echo "📦✅ No dependency changes detected."
 fi
