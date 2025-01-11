@@ -1,2 +1,6 @@
-# npm command(s) that will run upon commiting:
+#!/bin/sh
+
+# Runs lint-staged on staged files before commit.
+
+echo "Running lint-staged..."
 lint-staged
