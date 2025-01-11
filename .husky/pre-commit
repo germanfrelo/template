@@ -2,5 +2,5 @@
 
 # Runs lint-staged on staged files before commit.
 
-echo "Running lint-staged..."
+echo "Running pre-commit checks on staged files with lint-staged..."
 lint-staged
