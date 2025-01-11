@@ -1,2 +1,2 @@
 #!/bin/sh
-. ./.githooks/check-dependencies
+. ./.githooks/check-package-lock
