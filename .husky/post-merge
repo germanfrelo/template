@@ -1,2 +1,3 @@
 #!/bin/sh
-. ./.githooks/check-package-lock
+
+. ./.husky/scripts/check-package-lock
