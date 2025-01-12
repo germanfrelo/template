@@ -1,38 +1,27 @@
 #!/usr/bin/env bash
 
-# Checks for package-lock.json changes after running
-# git checkout, merge, or pull, and prompts to run 'npm ci'.
+# Checks for package-lock.json changes, and if found, prompts to run 'npm ci'.
 
 # Check if inside a git repository
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-	echo "Not in a git repository. Skipping dependency check."
-	exit 0
+	exit 0 # Skip silently
 fi
 
 # Check if there are any commits yet
 if ! git rev-parse --quiet HEAD >/dev/null 2>&1; then
-	echo "No commits yet. Skipping dependency check."
-	exit 0
+	exit 0 # Skip silently
 fi
 
 # Check if package-lock.json exists
 if [ ! -f "package-lock.json" ]; then
-	echo "package-lock.json not found. Skipping dependency check."
-	exit 0
+	exit 0 # Skip silently
 fi
 
-# Check for changes in package-lock.json (improved message and handling initial checkout)
-echo "📦🔍 Checking for package-lock.json changes..."
-
-if git diff --quiet HEAD@{1} HEAD -- package-lock.json >/dev/null 2>&1; then # Redirect output to avoid clutter
-	echo "📦✅ No changes to package-lock.json detected. Dependencies are up-to-date."
-else
-	# Handle initial checkout (no previous HEAD)
-	if [[ $(git rev-parse --verify HEAD@{1} 2>/dev/null) ]]; then # Check if HEAD@{1} is valid
-		echo "📦❗ package-lock.json has changed. Run 'npm ci' to update dependencies."
-	else
+# Check for changes in package-lock.json
+if ! git diff --quiet HEAD@{1} HEAD -- package-lock.json >/dev/null 2>&1; then
+	if ! git rev-parse --verify HEAD@{1} >/dev/null 2>&1; then
 		echo "📦ℹ️ Initial checkout. Run 'npm ci' to install dependencies."
+	else
+		echo "📦❗ package-lock.json has changed. Run 'npm ci' to update dependencies."
 	fi
 fi
-
-exit 0
