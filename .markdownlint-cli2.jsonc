@@ -1,4 +1,4 @@
-// I use the .markdownlint-cli2.jsonc configuration file because it enables auto-completion in VS Code when using the extension. More info: https://github.com/DavidAnson/markdownlint-cli2/blob/main/README.md#markdownlint-cli2jsonc.
+// I use the .markdownlint-cli2.jsonc configuration file because it enables auto-completion in VS Code when using the extension. More info: https://github.com/DavidAnson/markdownlint-cli2/blob/main/README.md#markdownlint-cli2jsonc
 
 {
 	"globs": ["**/*.md"], // Lint all .md files in the current directory and its subdirectories
