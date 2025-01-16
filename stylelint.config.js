@@ -11,19 +11,24 @@ export default {
 	reportNeedlessDisables: true,
 	reportUnscopedDisables: true,
 	rules: {
-		/**
-		 * ----------------------------------------
-		 * Avoid errors
-		 * ----------------------------------------
-		 */
+		/* ----------------------------------------
+		Avoid errors
+		---------------------------------------- */
 
 		// Descending
-		"no-descending-specificity": [true, { severity: "warning" }],
+		"no-descending-specificity": [
+			true,
+			{
+				severity: "warning",
+			},
+		],
 
 		// Duplicate
 		"font-family-no-duplicate-names": [
 			true,
-			{ ignoreFontFamilyNames: ["monospace"] }, // See https://github.com/search?q=repo:germanfrelo/base-css-stylesheet "monospace, monospace"
+			{
+				ignoreFontFamilyNames: ["monospace"], // See https://github.com/search?q=repo%3Agermanfrelo%2Fbase-css-stylesheet+%22monospace%2C+monospace%22&type=code
+			},
 		],
 
 		// Unknown
@@ -33,11 +38,9 @@ export default {
 		"no-unknown-custom-media": true,
 		"no-unknown-custom-properties": true,
 
-		/**
-		 * ----------------------------------------
-		 * Enforce conventions
-		 * ----------------------------------------
-		 */
+		/* ----------------------------------------
+		Enforce conventions
+		---------------------------------------- */
 
 		// Empty lines
 		"declaration-empty-line-before": "never",
@@ -112,22 +115,20 @@ export default {
 		// Redundant
 		"declaration-block-no-redundant-longhand-properties": null,
 
-		/**
-		 * ----------------------------------------
-		 * Plugin: use-defensive-css
-		 * ----------------------------------------
-		 */
+		/* ----------------------------------------
+		Plugin: use-defensive-css
+		---------------------------------------- */
 
 		"plugin/use-defensive-css": [
 			true,
 			{
 				"severity": "warning",
-				"accidental-hover": false, // Unncecessary
-				"background-repeat": false, // Solved in linked base.css stylesheet
+				"accidental-hover": false, // Enable as needed
+				"background-repeat": false, // My CSS reset already apply 'no-repeat' to all elements
 				"custom-property-fallbacks": true,
 				"flex-wrapping": true,
 				"scroll-chaining": true,
-				"scrollbar-gutter": false, // TODO: Check browser support (~78% in Oct. 2024)
+				"scrollbar-gutter": false, // Enable as needed
 				"vendor-prefix-grouping": true,
 			},
 		],
