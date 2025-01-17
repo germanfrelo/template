@@ -1,73 +1,56 @@
 /** @type {import('stylelint').Config} */
 export default {
 	extends: [
-		// Order matters: later configs take precedence over (override) earlier ones.
-		"stylelint-config-standard",
-		"stylelint-config-recess-order",
+		// The order of configs is important: later configs take precedence over earlier ones
+		"stylelint-config-standard", // Extends stylelint-config-recommended and turns on additional rules to enforce modern conventions
+		"stylelint-config-recess-order", // Sorts CSS properties
 	],
-	plugins: ["stylelint-plugin-defensive-css"],
+	plugins: ["stylelint-plugin-defensive-css"], // Enforces defensive CSS best practices
 	reportDescriptionlessDisables: true,
 	reportInvalidScopeDisables: true,
 	reportNeedlessDisables: true,
 	reportUnscopedDisables: true,
 	rules: {
-		/* ----------------------------------------
-		Avoid errors
+		/* Avoid errors
 		---------------------------------------- */
-
 		// Descending
-		"no-descending-specificity": [
-			true,
-			{
-				severity: "warning",
-			},
-		],
-
+		"no-descending-specificity": [true, { severity: "warning" }], // Already enabled in stylelint-config-recommended but with severity 'error'
 		// Duplicate
 		"font-family-no-duplicate-names": [
-			true,
+			true, // Already enabled in stylelint-config-recommended
 			{
-				ignoreFontFamilyNames: ["monospace"], // See https://github.com/search?q=repo%3Agermanfrelo%2Fbase-css-stylesheet+%22monospace%2C+monospace%22&type=code
+				ignoreFontFamilyNames: ["monospace"], // For the CSS reset I use: https://github.com/search?q=repo%3Agermanfrelo%2Fbase-css-stylesheet+%22monospace%2C+monospace%22&type=code
 			},
 		],
-
 		// Unknown
-		"declaration-property-value-no-unknown": true,
-		"media-feature-name-value-no-unknown": true,
 		"no-unknown-animations": true,
 		"no-unknown-custom-media": true,
 		"no-unknown-custom-properties": true,
 
-		/* ----------------------------------------
-		Enforce conventions
+		/* Enforce conventions
+		(overrides rules from stylelint-config-standard)
 		---------------------------------------- */
-
 		// Empty lines
 		"declaration-empty-line-before": "never",
-
 		// Notation
-		"media-feature-range-notation": null, // TODO: Remove when browser support is ~96% (https://caniuse.com/css-media-range-syntax)
-
+		"media-feature-range-notation": null, // TODO: Remove when 'baseline' is 'widely available' (~96%) (https://caniuse.com/css-media-range-syntax)
 		// Pattern
 		"custom-media-pattern": null,
 		"custom-property-pattern": null,
 		"keyframes-name-pattern": null,
 		"selector-class-pattern": null,
 		"selector-id-pattern": null,
-
 		// Redundant
 		"declaration-block-no-redundant-longhand-properties": null,
 
-		/* ----------------------------------------
-		Plugin: use-defensive-css
+		/* Plugin: use-defensive-css
 		---------------------------------------- */
-
 		"plugin/use-defensive-css": [
 			true,
 			{
 				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
-				"background-repeat": false, // My CSS reset already apply 'no-repeat' to all elements
+				"background-repeat": false, // The CSS reset I use already apply 'no-repeat' to all elements
 				"custom-property-fallbacks": true,
 				"flex-wrapping": true,
 				"scroll-chaining": true,
