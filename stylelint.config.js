@@ -14,13 +14,14 @@ export default {
 		/* Avoid errors
 		---------------------------------------- */
 		// Descending
-		"no-descending-specificity": [true, { severity: "warning" }], // Already enabled in stylelint-config-recommended but with severity 'error'
+		"no-descending-specificity": [
+			true, // Already enabled in stylelint-config-recommended
+			{ severity: "warning" }, // Default is 'error', but I prefer 'warning'
+		],
 		// Duplicate
 		"font-family-no-duplicate-names": [
 			true, // Already enabled in stylelint-config-recommended
-			{
-				ignoreFontFamilyNames: ["monospace"], // For the CSS reset I use: https://github.com/search?q=repo%3Agermanfrelo%2Fbase-css-stylesheet+%22monospace%2C+monospace%22&type=code
-			},
+			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in the CSS reset
 		],
 		// Unknown
 		"no-unknown-animations": true,
@@ -30,6 +31,11 @@ export default {
 		/* Enforce conventions
 		(overrides rules from stylelint-config-standard)
 		---------------------------------------- */
+		// Allowed, disallowed & required
+		"property-no-vendor-prefix": [
+			true,
+			{ ignoreProperties: ["text-size-adjust"] }, // Don't report the '-webkit-text-size-adjust' property used in the imported CSS reset
+		],
 		// Empty lines
 		"declaration-empty-line-before": "never",
 		// Notation
@@ -50,7 +56,7 @@ export default {
 			{
 				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
-				"background-repeat": false, // The CSS reset I use already apply 'no-repeat' to all elements
+				"background-repeat": false, // The imported CSS reset already apply 'no-repeat' to all elements
 				"custom-property-fallbacks": true,
 				"flex-wrapping": true,
 				"scroll-chaining": true,
