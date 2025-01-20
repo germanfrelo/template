@@ -38,6 +38,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "9.39.2",
+		"@evilmartians/lefthook": "1.10.9",
 		"eslint": "9.39.2",
 		"globals": "17.6.0",
 		"markdownlint-cli2": "0.20.0",
