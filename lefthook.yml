@@ -40,3 +40,27 @@
 #
 #     - script: "hello.go"
 #       runner: go run
+
+# TODO: WIP
+
+# pre-commit:
+#   parallel: true
+#   commands:
+#     css:
+#       glob: "*.{css}"
+#       run: yarn prettier --write {staged_files} && yarn stylelint --fix {staged_files} && git add {staged_files}
+#     stylelint:
+#       glob: "*.{css}"
+#       run: stylelint {staged_files}
+#     js:
+#       glob: "*.js"
+#       run: yarn prettier --write {staged_files} && yarn eslint {staged_files} && git add {staged_files}
+
+# pre-push:
+#   parallel: true
+#   commands:
+#     stylelint:
+#       tags: frontend style
+#       files: git diff --name-only main
+#       glob: "*.css"
+#       run: stylelint {files}
