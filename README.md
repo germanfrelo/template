@@ -24,8 +24,12 @@ If you suspect line ending issues (CRLF vs LF):
 
 #### Git Hooks
 
+TODO: Change after completing lefthook configuration and usage.
+
 - **Pre-commit**: Prevents commits on the `main` branch or in a detached HEAD state.
 - **Post-checkout** & **Post-merge**: Checks for `package-lock.json` changes when running `git checkout/merge/pull/switch`, and if found, prompts to run `npm ci`.
+
+TODO: Change after completing lefthook configuration and usage.
 
 See files in [.husky](./.husky/) folder.
 
@@ -47,6 +51,8 @@ See files in [.husky](./.husky/) folder.
 - **Markdown**: [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) (see [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc))
 - **CSS**: [Stylelint](https://stylelint.io/) (see [`.stylelintignore`](./.stylelintignore) and [`stylelint.config.js`](./stylelint.config.js))
 - **JavaScript**: [ESLint](https://eslint.org/) (see [`eslint.config.js`](./eslint.config.js))
+
+TODO: Change husky and lint-staged after completing lefthook configuration and usage.
 
 The formatter(s) and linters used are **configured using sensible and *personal preferences***, and are **automatically run before committing** using a pre-commit Git hook with [husky](./.husky/pre-commit) and [lint-staged](https://github.com/search?q=repo%3Agermanfrelo%2Ftemplate+path%3Apackage.json+%22lint-staged%22&type=code).
 
@@ -91,6 +97,8 @@ Some parts should be customized for each project, while others are optional.
 
 ### May require customization
 
+TODO: Change lint-staged after completing lefthook configuration and usage.
+
 - [`package.json`](./package.json):
   - `version`
   - `private`
@@ -111,6 +119,8 @@ Some parts should be customized for each project, while others are optional.
 - [`styles.css`](./styles.css)
 
 ### Doesn't require customization (probably)
+
+TODO: Change husky after completing lefthook configuration and usage.
 
 - [`.husky/`](./.husky/)
 - [`.editorconfig`](./.editorconfig)
