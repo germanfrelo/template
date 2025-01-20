@@ -10,7 +10,7 @@ const config = {
 	quoteProps: "consistent",
 	overrides: [
 		{
-			files: ["*.html", "*.css", "*.astro"],
+			files: ["*.astro", "*.css", "*.html"],
 			options: {
 				printWidth: 9999,
 			},
