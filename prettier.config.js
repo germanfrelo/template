@@ -10,7 +10,7 @@ const config = {
 		{
 			files: ["*.css", "*.html"],
 			options: {
-				printWidth: 9999,
+				printWidth: Number.POSITIVE_INFINITY,
 			},
 		},
 		{
