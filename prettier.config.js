@@ -21,7 +21,7 @@ const config = {
 			},
 		},
 		{
-			files: ["*.js", "*.jsx", "*.vue"],
+			files: ["*.astro", "*.js", "*.jsx", "*.vue"],
 			options: {
 				singleAttributePerLine: true,
 			},

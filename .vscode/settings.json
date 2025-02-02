@@ -9,9 +9,27 @@
 
 	// Lint CSS with Stylelint
 	"stylelint.enable": true, // default
+	"stylelint.validate": [
+		"css", // default
+		"postcss", // default
+		"astro",
+		"svelte",
+		"vue",
+		"xml"
+	],
+	// Disable VS Code's built-in linters to prevent them from reporting the same errors as Stylelint
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
+
+	// Lint JS and similar with ESLint
+	"eslint.validate": [
+		"astro", // .astro
+		"javascript", // .js
+		"javascriptreact", // .jsx
+		"typescript", // .ts
+		"typescriptreact" // .tsx
+	],
 
 	// Useful code actions on save
 	"editor.codeActionsOnSave": {
