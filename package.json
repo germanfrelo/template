@@ -22,8 +22,10 @@
 	"license": "MIT",
 	"author": "Germán Freixinós",
 	"type": "module",
-	"main": "",
 	"scripts": {
+		"astro": "astro",
+		"build": "astro build",
+		"dev": "astro dev",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "npm run lint:css && npm run lint:js && npm run lint:md",
@@ -35,6 +37,7 @@
 		"lint:md": "markdownlint-cli2",
 		"lint:md:fix": "npm run lint:md -- --fix",
 		"prepare": "husky",
+		"preview": "astro preview",
 		"test": "npm run format:check && npm run lint"
 	},
 	"lint-staged": {
@@ -53,6 +56,9 @@
 			"prettier --write --ignore-unknown"
 		]
 	},
+	"dependencies": {
+		"astro": "5.2.3"
+	},
 	"devDependencies": {
 		"@eslint/js": "9.39.1",
 		"eslint": "9.39.1",
@@ -60,9 +66,11 @@
 		"husky": "9.1.7",
 		"lint-staged": "16.2.7",
 		"markdownlint-cli2": "0.19.1",
+		"postcss-html": "1.8.0",
 		"prettier": "3.6.2",
 		"prettier-plugin-astro": "0.14.1",
 		"stylelint": "16.26.0",
+		"stylelint-config-html": "1.1.0",
 		"stylelint-config-recess-order": "7.4.0",
 		"stylelint-config-standard": "39.0.1",
 		"stylelint-plugin-defensive-css": "1.0.4"
