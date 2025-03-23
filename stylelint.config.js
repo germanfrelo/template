@@ -24,6 +24,8 @@ export default {
 			true, // Already enabled in stylelint-config-recommended
 			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in the CSS reset
 		],
+		// Invalid
+		"syntax-string-no-invalid": true,
 		// Unknown
 		"no-unknown-animations": true,
 		"no-unknown-custom-media": true,
