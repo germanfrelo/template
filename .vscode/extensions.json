@@ -6,7 +6,6 @@
 		// Linting
 		"DavidAnson.vscode-markdownlint",
 		"dbaeumer.vscode-eslint",
-		"stylelint.vscode-stylelint",
-		"usernamehw.errorlens"
+		"stylelint.vscode-stylelint"
 	]
 }
