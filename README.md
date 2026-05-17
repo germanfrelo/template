@@ -11,6 +11,17 @@ It's preconfigured with up-to-date tools and includes comments explaining my cho
 - List of **files and directories** to be **ignored by Git** (see [`.gitignore`](./.gitignore)).[^1]
 - **Line endings** of text-based files committed to the repository are automatically **normalized** (see [`.gitattributes`](./.gitattributes)).
 
+#### Line Endings Troubleshooting <!-- omit from toc -->
+
+If you suspect line ending issues (CRLF vs LF):
+
+1. **Fix**: Run `git add --renormalize .`
+   This forces Git to re-evaluate all tracked files against the current `.gitattributes`. It's necessary for files checked into Git *prior* to adding normalization rules. Check `git status` after running this; if files are staged, commit the changes to finalize the normalization.
+2. **Verify**: Run `git ls-files --eol`. For a normalized text file, you should see `i/lf` (indicating it is correctly stored as **LF** in the Git index):
+   - **macOS/Linux**: `i/lf    w/lf    attr/text=auto  file.txt`
+   - **Windows**: `i/lf    w/crlf  attr/text=auto  file.txt`
+   *Note: The goal is to ensure the repository copy uses **LF** (`i/lf`). The local working tree (`w/`) will vary based on your OS.*
+
 #### Git Hooks
 
 - **Pre-commit**: Prevents commits on the `main` branch or in a detached HEAD state.
