@@ -11,7 +11,7 @@ It's preconfigured with up-to-date tools and includes comments explaining my cho
 - List of **files and directories** to be **ignored by Git** (see [`.gitignore`](./.gitignore)).[^1]
 - **Line endings** of text-based files committed to the repository are automatically **normalized** (see [`.gitattributes`](./.gitattributes)).
 
-#### Line Endings Troubleshooting <!-- omit from toc -->
+#### Line Endings Troubleshooting
 
 If you suspect line ending issues (CRLF vs LF):
 
