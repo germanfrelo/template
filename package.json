@@ -41,7 +41,7 @@
 			"prettier --write"
 		],
 		"*.md": [
-			"markdownlint-cli2 --fix"
+			"markdownlint-cli2 --no-globs --fix"
 		],
 		"!(*.css|*.js|*.md)": [
 			"prettier --write --ignore-unknown"
