@@ -1,4 +1,14 @@
 /**
+ * NOTE:
+ * Prettier automatically parses and converts these EditorConfig properties to their corresponding Prettier options:
+ * - end_of_line     -> endOfLine
+ * - indent_style    -> useTabs
+ * - indent_size     -> tabWidth
+ * - max_line_length -> printWidth
+ * Do NOT configure them here; do it in the .editorconfig file.
+ * This will serve as a tool-agnostic single source of truth and will prevent conflicts between editor typing behaviour and Prettier formatting.
+ * See https://prettier.io/docs/configuration#editorconfig
+ *
  * @see https://prettier.io/docs/configuration
  * @type {import("prettier").Config}
  */

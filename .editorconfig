@@ -1,8 +1,5 @@
-# https://editorconfig.org
+# https://editorconfig.org
 
-# Note: EditorConfig and Prettier share some options. To avoid conflicts, configure them here only; Prettier natively respects this file. See https://prettier.io/docs/configuration#editorconfig
-
-# Stop the editor from looking for .editorconfig files in parent directories.
 root = true
 
 [*]
