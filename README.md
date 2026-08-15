@@ -2,6 +2,8 @@
 
 > A curated front-end tooling baseline — designed for zero-drift environmental integrity and engineering excellence.
 
+TODO: **Guardrails on every commit** — Prettier formatting is enforced on staged files via Husky + lint-staged; post-checkout and post-merge hooks warn when `package-lock.json` changes and prompt to run `npm ci`.
+
 ## Philosophy
 
 Most projects suffer from "environmental drift"—where a developer's local state differs from the repository's truth. This baseline eliminates that risk through hardened quality gates, deterministic dependency management, and state-aware automation. Every configuration choice is documented to explain the *why* behind the *what*.
