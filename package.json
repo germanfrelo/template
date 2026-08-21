@@ -2,15 +2,8 @@
 	"name": "template",
 	"version": "1.0.0",
 	"private": true,
-	"description": "My repository template.",
-	"keywords": [
-		"template",
-		"repository",
-		"template-project",
-		"repository-template",
-		"repo-template",
-		"template-repository"
-	],
+	"description": "Baseline toolchain for front-end projects",
+	"keywords": [],
 	"homepage": "https://github.com/germanfrelo/template#readme",
 	"bugs": {
 		"url": "https://github.com/germanfrelo/template/issues"

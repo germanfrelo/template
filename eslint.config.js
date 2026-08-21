@@ -4,13 +4,12 @@ import globals from "globals";
 export default [
 	{
 		languageOptions: {
-			// Enable all predefined browser global variables
-			globals: globals.browser,
+			globals: globals.browser, // Enables predefined set of browser global variables.
 		},
 	},
-	// ESLint's predefined config that enables its recommended rules
-	js.configs.recommended,
+	js.configs.recommended, // Enables ESLint's recommended set of rules.
 	{
-		ignores: ["*.min.*"], // Ignore minified files
+		// ESLint ignores `**/node_modules/` and `.git/` by default. More info: https://eslint.org/docs/latest/use/configure/ignore
+		ignores: ["*.min.*"], // Ignores minified files.
 	},
 ];

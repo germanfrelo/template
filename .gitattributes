@@ -1,8 +1,9 @@
-# Automatically normalize line endings of text-based files introduced to the repository. More info:
-# - https://git-scm.com/docs/gitattributes#_end_of_line_conversion
-# - https://aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/#normalizing-line-endings-in-git-with-gitattributes
+# .gitattributes
+# https://git-scm.com/docs/gitattributes
+
+# Automatically normalize line endings of text-based files introduced to the repository. More info: https://docs.github.com/en/get-started/git-basics/configuring-git-to-handle-line-endings
 * text=auto
 
-# Excluded files and directories from GitHub language statistics.
+# Exclude certain files and directories from the repository's language statistics on GitHub. More info: https://github.com/github-linguist/linguist/tree/main/docs
 *.config.js linguist-vendored
 .husky/** linguist-vendored

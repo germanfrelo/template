@@ -1,135 +1,57 @@
-# My Personal Front-End Starter Template
+# Baseline toolchain for front-end projects
 
-This template repository provides a foundation for building simple websites using ***my preferred*** front-end web development tools.
+> A curated front-end tooling baseline — every config choice explained.
 
-It's preconfigured with up-to-date tools and includes comments explaining my choices throughout the codebase.
+## Getting started
+
+1. Create a new repository from this template and clone it.
+2. Run `npm install`.
+3. Install the [recommended VS Code extensions](./.vscode/extensions.json) (optional but recommended).
+4. Update these files for your project:
+   - `.gitignore`
+   - `index.html`
+   - `package.json`
+   - `README.md`
+   - `styles.css`
 
 ## Features
 
 ### Git
 
-- List of **files and directories** to be **ignored by Git** (see [`.gitignore`](./.gitignore)).[^1]
-- **Line endings** of text-based files committed to the repository are automatically **normalized** (see [`.gitattributes`](./.gitattributes)).
+Safe commit workflow: LF normalisation, a curated ignore list, and hooks that guard against bad commits and enforce code quality on staged files.
 
-#### Line Endings Troubleshooting
+#### Git hooks
 
-If you suspect line ending issues (CRLF vs LF):
+- **Pre-commit**: guards against commits to `main` or in a detached HEAD state; runs lint-staged on staged files.
+- **Post-checkout & Post-merge**: detects `package-lock.json` changes and prompts `npm ci`.
 
-1. **Fix**: Run `git add --renormalize .`
-   This forces Git to re-evaluate all tracked files against the current `.gitattributes`. It's necessary for files checked into Git *prior* to adding normalization rules. Check `git status` after running this; if files are staged, commit the changes to finalize the normalization.
-2. **Verify**: Run `git ls-files --eol`. For a normalized text file, you should see `i/lf` (indicating it is correctly stored as **LF** in the Git index):
-   - **macOS/Linux**: `i/lf    w/lf    attr/text=auto  file.txt`
-   - **Windows**: `i/lf    w/crlf  attr/text=auto  file.txt`
-   *Note: The goal is to ensure the repository copy uses **LF** (`i/lf`). The local working tree (`w/`) will vary based on your OS.*
+### Code quality
 
-#### Git Hooks
+Every config file commented to explain each choice.
 
-- **Pre-commit**: Prevents commits on the `main` branch or in a detached HEAD state.
-- **Post-checkout** & **Post-merge**: Checks for `package-lock.json` changes when running `git checkout/merge/pull/switch`, and if found, prompts to run `npm ci`.
+| Language | Formatter | Linter |
+| --- | --- | --- |
+| **Markdown** | markdownlint | markdownlint |
+| **CSS** | Prettier | Stylelint |
+| **JavaScript** | Prettier | ESLint |
+| **Other** | Prettier | — |
 
-See files in [.husky](./.husky/) folder.
+When they run:
+
+- **On save** (VS Code) — all tools auto-fix.
+- **Before every commit** (lint-staged, staged files only):
+  - Markdown — markdownlint auto-fixes, then fails the commit if issues remain.
+  - CSS — Prettier auto-fixes formatting; Stylelint checks and fails the commit if issues exist.
+  - JavaScript — Prettier auto-fixes formatting; ESLint checks and fails the commit if warnings or errors remain.
+  - Other — Prettier auto-fixes formatting.
+- **Manually** — `npm run format` (Prettier); `npm run lint` / `npm run lint:fix` (all linters).
+
+### Editor
+
+EditorConfig and VS Code settings and extensions for consistent conventions with zero per-developer setup. Prettier also reads `.editorconfig` — the two work in concert.
 
 ### Dependencies
 
-- **Automated** dependency **updates**  with [GitHub's Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates) (see [`.github/dependabot.yml`](./.github/dependabot.yml)).
-- **Pinned versions**: dependencies saved to `package.json` will be configured with an exact version by default, rather than using npm's default semver range operator (see [`.npmrc`](./.npmrc)).[^2]
-- [**`.nvmrc`**](./.nvmrc) with `lts/*` by default (customize it as needed)
-
-### Formatting and Linting
-
-#### Formatting
-
-- [EditorConfig](https://editorconfig.org/) (see [`.editorconfig`](./.editorconfig))
-- [Prettier](https://prettier.io/) (see [`.prettierignore`](./.prettierignore) and [`prettier.config.js`](./prettier.config.js))
-
-#### Linting
-
-- **Markdown**: [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) (see [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc))
-- **CSS**: [Stylelint](https://stylelint.io/) (see [`.stylelintignore`](./.stylelintignore) and [`stylelint.config.js`](./stylelint.config.js))
-- **JavaScript**: [ESLint](https://eslint.org/) (see [`eslint.config.js`](./eslint.config.js))
-
-The formatter(s) and linters used are **configured using sensible and *personal preferences***, and are **automatically run before committing** using a pre-commit Git hook with [husky](./.husky/pre-commit) and [lint-staged](https://github.com/search?q=repo%3Agermanfrelo%2Ftemplate+path%3Apackage.json+%22lint-staged%22&type=code).
-
-### Code editor integrations
-
-To get the most out of the tools and have a better developer experience, it is highly recommended to use the integrations with the code editors.
-
-#### Visual Studio Code
-
-- Recommended [extensions](./.vscode/extensions.json)
-- Useful [settings](./.vscode/settings.json)
-
-## Getting started
-
-### Prerequisites
-
-- [Git](https://docs.github.com/en/get-started/getting-started-with-git)
-- [Node.js + npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-### Steps
-
-1. **Create a new repository**[^3] from this template **and clone it**[^4] to your computer.
-2. **Install the dependencies** by running `npm install` in the root directory of the repository.
-3. **Install the tools' integrations with your code editor** (optional, but highly recommended):
-   - [Extensions for VS Code](./.vscode/extensions.json).
-
-## Customization
-
-Some parts should be customized for each project, while others are optional.
-
-### Must be customized
-
-- [`package.json`](./package.json):
-  - `name`
-  - `description`
-  - `keywords`
-  - `homepage`
-  - `bugs.url`
-  - `repository.url`
-  - `author`
-- [`README.md`](./README.md)
-
-### May require customization
-
-- [`package.json`](./package.json):
-  - `version`
-  - `private`
-  - `license`
-  - `type`
-  - `main`
-  - `dependencies`
-  - `devDependencies`
-  - `scripts`
-  - `lint-staged`
-- [`.github/dependabot.yml`](./.github/dependabot.yml)
-- [`.vscode/extensions.json`](./.vscode/extensions.json)
-- [`.vscode/settings.json`](./.vscode/settings.json)
-- [`.gitignore`](./.gitignore)
-- [`.nvmrc`](./.nvmrc)
-- [`index.html`](./index.html)
-- [`LICENSE`](./LICENSE)
-- [`styles.css`](./styles.css)
-
-### Doesn't require customization (probably)
-
-- [`.husky/`](./.husky/)
-- [`.editorconfig`](./.editorconfig)
-- [`.gitattributes`](./.gitattributes)
-- [`.npmrc`](./.npmrc)
-
-## Contribution
-
-Feel free to fork this template and modify it to fit your needs! I'm open to suggestions on how to improve it.
-
-## License
-
-[LICENSE](./LICENSE).
-
-## References
-
-- [Client-side web development tools (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools)
-
-[^1]: Use [gitignore.io](http://gitignore.io).
-[^2]: [Should you Pin your JavaScript Dependencies?](https://docs.renovatebot.com/dependency-pinning/) (Renovate Docs)
-[^3]: [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (GitHub Docs)
-[^4]: [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) (GitHub Docs)
+- Automated updates via Dependabot (see [`.github/dependabot.yml`](./.github/dependabot.yml)).
+- Exact version pinning: dependencies saved to `package.json` with exact versions, not semver ranges (see [`.npmrc`](./.npmrc)).
+- Node LTS version pinned via [`.nvmrc`](./.nvmrc).

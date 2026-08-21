@@ -5,6 +5,7 @@
 		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
 		"editor.renderWhitespace": "boundary"
 	},
+	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 
 	// Lint CSS with Stylelint
