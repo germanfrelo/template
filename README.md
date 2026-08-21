@@ -1,33 +1,35 @@
 # Baseline toolchain for front-end projects
 
-> A curated front-end tooling baseline — every config choice explained.
+> A curated front-end tooling baseline — designed for zero-drift environmental integrity and engineering excellence.
 
-## Getting started
+## Philosophy
 
-1. Create a new repository from this template and clone it.
-2. Run `npm install`.
-3. Install the [recommended VS Code extensions](./.vscode/extensions.json) (optional but recommended).
-4. Update these files for your project:
-   - `.gitignore`
-   - `index.html`
-   - `package.json`
-   - `README.md`
-   - `styles.css`
+Most projects suffer from "environmental drift"—where a developer's local state differs from the repository's truth. This baseline eliminates that risk through hardened quality gates, deterministic dependency management, and state-aware automation. Every configuration choice is documented to explain the *why* behind the *what*.
 
 ## Features
 
-### Git
+### Environmental Integrity
 
-Safe commit workflow: LF normalisation, a curated ignore list, and hooks that guard against bad commits and enforce code quality on staged files.
+We treat the developer's local environment as a critical part of the CI/CD pipeline.
 
-#### Git hooks
+- Deterministic Dependencies: Enforced via .npmrc (version pinning) and .nvmrc (runtime consistency) to ensure "works on my machine" is a guarantee, not a hope.
+- Integrity Gates: Automated checks in post-merge and post-checkout hooks detect package-lock.json shifts, providing immediate feedback to keep local node_modules in sync.
+- Cross-Platform Safety: Tooling is designed to be robust across macOS, Linux, and Windows environments.
 
-- **Pre-commit**: guards against commits to `main` or in a detached HEAD state; runs lint-staged on staged files.
-- **Post-checkout & Post-merge**: detects `package-lock.json` changes and prompts `npm ci`.
+### Safe-Commit Workflow
 
-### Code quality
+A multi-layered defense system that guards the repository's main branch.
 
-Every config file commented to explain each choice.
+- Context-Aware Hooks: Prevents common accidents like committing in a detached HEAD state or accidentally pushing to protected branches.
+- Atomic Quality Checks: Uses lint-staged to run ESLint, Stylelint, and Prettier only on changed files, ensuring high code quality without sacrificing development speed.
+- Automatic Normalization: Comprehensive .gitattributes configuration ensures consistent line endings and excludes build-tool noise from GitHub language statistics.
+
+### Design & Code Quality
+
+ Zero-config consistency across editors and environments.
+
+- Synchronized Formatting: EditorConfig, Prettier, and Linters work in concert to enforce a unified style guide automatically on save and before every commit.
+- Documented Standards: Every tool configuration (ESLint, Stylelint, etc.) is commented to explain the trade-offs and decisions made.
 
 | Language | Formatter | Linter |
 | --- | --- | --- |
@@ -36,22 +38,15 @@ Every config file commented to explain each choice.
 | **JavaScript** | Prettier | ESLint |
 | **Other** | Prettier | — |
 
-When they run:
+## Getting started
 
-- **On save** (VS Code) — all tools auto-fix.
-- **Before every commit** (lint-staged, staged files only):
-  - Markdown — markdownlint auto-fixes, then fails the commit if issues remain.
-  - CSS — Prettier auto-fixes formatting; Stylelint checks and fails the commit if issues exist.
-  - JavaScript — Prettier auto-fixes formatting; ESLint checks and fails the commit if warnings or errors remain.
-  - Other — Prettier auto-fixes formatting.
-- **Manually** — `npm run format` (Prettier); `npm run lint` / `npm run lint:fix` (all linters).
+1. Create a new repository from this template and clone it.
+2. Run `npm install`.
+3. Install the [recommended VS Code extensions](./.vscode/extensions.json) (optional but recommended).
+4. Update project-specific files (`README.md`, `package.json`, etc.).
 
-### Editor
+## Professional Automation
 
-EditorConfig and VS Code settings and extensions for consistent conventions with zero per-developer setup. Prettier also reads `.editorconfig` — the two work in concert.
-
-### Dependencies
-
-- Automated updates via Dependabot (see [`.github/dependabot.yml`](./.github/dependabot.yml)).
-- Exact version pinning: dependencies saved to `package.json` with exact versions, not semver ranges (see [`.npmrc`](./.npmrc)).
-- Node LTS version pinned via [`.nvmrc`](./.nvmrc).
+- **Pre-commit**: Guards against commits to the default branch or in a detached `HEAD` state; runs `lint-staged` on staged files.
+- **Post-checkout & Post-merge**: Uses industry-standard dependency tracking to alert you when your environment needs a sync (`npm ci`).
+- **Dependabot:** Automated dependency updates via [`.github/dependabot.yml`](./.github/dependabot.yml).

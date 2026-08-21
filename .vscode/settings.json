@@ -21,5 +21,20 @@
 		"source.fixAll.markdownlint": "explicit",
 		"source.fixAll.stylelint": "explicit",
 		"source.sortImports": "explicit"
+	},
+
+	// Workspace color customizations
+	"workbench.colorCustomizations": {
+		// "activityBar.background": "#BC4A3C",
+		// "activityBar.foreground": "#FFF",
+		// "activityBar.inactiveForeground": "#FFF",
+		// "activityBarTop.foreground": "#FFF",
+		// "activityBarTop.inactiveForeground": "#FFF",
+		// "commandCenter.foreground": "#FFF",
+		"statusBar.background": "#BC4A3C",
+		"statusBar.foreground": "#FFF"
+		// "titleBar.activeBackground": "#BC4A3C",
+		// "titleBar.activeForeground": "#FFF",
+		// "titleBar.inactiveBackground": "#BC4A3C"
 	}
 }

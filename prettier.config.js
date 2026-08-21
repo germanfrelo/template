@@ -3,8 +3,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
-	// Prevents mixed styles.
-	quoteProps: "consistent",
+	quoteProps: "consistent", // Prevents mixed styles.
 	overrides: [
 		{
 			// Avoids arbitrary line-length-based wrapping for CSS declarations and HTML attributes.

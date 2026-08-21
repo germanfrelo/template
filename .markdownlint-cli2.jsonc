@@ -1,48 +1,48 @@
-// Configuration for markdownlint-cli2.
-// Note: Using JSONC as the file format allows auto-completion and comments.
-// Ref.: https://github.com/DavidAnson/markdownlint-cli2
+/**
+ * @see https://github.com/DavidAnson/markdownlint-cli2
+ * Note: All rules are enabled by default.
+ */
 {
-	"globs": ["**/*.md"], // Lint all .md files in the current directory and its subdirectories
+	"globs": ["**/*.md"],
 	"gitignore": true,
-	"ignores": ["LICEN[CS]E*"],
+	"ignores": ["LICENCE*", "LICENSE*"],
 	"config": {
-		"default": true,
+		// Disables all markdownlint rules that overlap with Prettier.
+		// Ref: https://github.com/DavidAnson/markdownlint/blob/main/doc/Prettier.md
+		"extends": "markdownlint/style/prettier",
+
+		// Rationale: https://google.github.io/styleguide/docguide/style.html#codeblocks
 		"code-block-style": {
 			"style": "fenced"
 		},
-		"code-fence-style": {
-			"style": "backtick"
-		},
+
+		// Rationale:
+		// - https://google.github.io/styleguide/docguide/style.html#atx-style-headings
+		// - https://cirosantilli.com/markdown-style-guide/#option-header-atx
 		"heading-style": {
 			"style": "atx"
 		},
-		"hr-style": {
-			"style": "---"
-		},
-		"line-length": false,
-		"no-bare-urls": false,
-		"no-blanks-blockquote": false, // Allow consecutive blockquotes/alerts/callouts
+
+		// Rationale: See example in https://github.com/DavidAnson/markdownlint/blob/main/doc/md024.md
 		"no-duplicate-heading": {
 			"siblings_only": true
 		},
+
+		// Rationale: Personal preference.
 		"no-inline-html": false,
+
+		// Rationale: Re-enables rule (disabled by Prettier preset) to fix '#Heading' -> '# Heading'.
+		"no-missing-space-atx": true,
+
+		// Rationale: Re-enables rule (disabled by Prettier preset) to fix '#Heading#' -> '# Heading #'.
+		"no-missing-space-closed-atx": true,
+
+		// Rationale: Space inside code spans can be intentional when documenting literal space characters as part of syntax notation (e.g. ` :`).
+		"no-space-in-code": false,
+
+		// Rationale: Allows '!' (default is ".,;:!。，；：！").
 		"no-trailing-punctuation": {
-			"punctuation": ".,;:。，；：！" // Allow '!' (default is ".,;:!。，；：！")
-		},
-		"no-trailing-spaces": {
-			"strict": true
-		},
-		"ol-prefix": {
-			"style": "ordered"
-		},
-		"strong-style": {
-			"style": "asterisk"
-		},
-		"table-pipe-style": {
-			"style": "leading_and_trailing"
-		},
-		"ul-style": {
-			"style": "dash"
+			"punctuation": ".,;:。，；：！"
 		}
 	}
 }

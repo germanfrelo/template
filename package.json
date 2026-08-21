@@ -17,6 +17,7 @@
 	"type": "module",
 	"main": "",
 	"scripts": {
+		"check:deps": "check-dependencies",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "npm run lint:css && npm run lint:js && npm run lint:md",
